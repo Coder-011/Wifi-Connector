@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0f172a">
+    <title>AutoLog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- PWA improvements -->
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+    <!-- HOME SCREEN -->
+    <div id="home-screen" class="screen active">
+        <div class="header">
+            <h1>AutoLog</h1>
+            <div class="header-buttons">
+                <button id="info-btn" class="icon-btn">ℹ️</button>
+                <button id="settings-btn" class="icon-btn">⚙️</button>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div id="credentials-info" class="credentials-info"></div>
+            
+            <!-- Big Circular Connect Button -->
+            <button id="connect-btn" class="connect-button">
+                <div class="button-inner">
+                    <span class="wifi-icon">📶</span>
+                    <span class="connect-text">Connect </span>
+                </div>
+            </button>
+            
+            <p class="helper-text">Open when connected to college WiFi</p>
+        </div>
+        
+        <div class="footer">
+            <p class="watermark">Made by Anup Aryal</p>
+        </div>
+    </div>
+
+    <!-- CREDENTIALS SCREEN -->
+    <div id="credentials-screen" class="screen">
+        <div class="header">
+            <button id="back-btn" class="icon-btn">←</button>
+            <h1>Save Login</h1>
+        </div>
+        
+        <div class="content form-content">
+            <div class="input-group">
+                <label>Username / User ID</label>
+                <input type="text" id="username-input" placeholder="Enter your college ID" autocomplete="username">
+            </div>
+            
+            <div class="input-group">
+                <label>Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password-input" placeholder="Enter password" autocomplete="current-password">
+                    <button id="toggle-password" class="eye-btn">👁️</button>
+                </div>
+            </div>
+            
+            <div class="button-row">
+                <button id="save-btn" class="primary-btn">Save Credentials</button>
+                <button id="clear-btn" class="secondary-btn">Clear</button>
+            </div>
+            
+            <p class="warning">
+                Credentials are stored only in your browser.<br>
+                Keep your device secure.
+            </p>
+        </div>
+    </div>
+
+    <!-- INFO MODAL -->
+    <div id="info-modal" class="modal">
+        <div class="modal-content">
+            <h2>How AutoLog Works</h2>
+            <ul>
+                <li>1. Save your college WiFi username and password once.</li>
+                <li>2. Connect to college WiFi (internet won't work yet).</li>
+                <li>3. Open AutoLog from home screen.</li>
+                <li>4. Tap the big <strong>AUTO LOG</strong> button.</li>
+                <li>5. It automatically logs you in to the captive portal.</li>
+            </ul>
+            <button id="close-modal" class="primary-btn">Got it</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
